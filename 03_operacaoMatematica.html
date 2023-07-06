@@ -1,18 +1,53 @@
 <meta charset="UTF-8">
 <script>
-    /*
-    //PROBLEMA: Faça um script que leia 2 números e em seguida pergunte ao usuário qual operação ele deseja realizar. O resultado da operação deve ser acompanhado de uma frase que diga se o número é:
-    - par ou ímpar;
-    - positivo ou negativo;
-    - inteiro ou decimal.
-    */
+    let numero1 = parseFloat(prompt("Digite o primeiro número:"));
+let numero2 = parseFloat(prompt("Digite o segundo número:"));
 
-    //ENTRADA
+let operacao = prompt("Qual operação você deseja realizar?\n1 - Soma\n2 - Subtração\n3 - Multiplicação\n4 - Divisão");
 
+let resultado;
+let mensagem = "";
 
-    //PROCESSAMENTO
+switch (parseInt(operacao)) {
+  case 1:
+    resultado = numero1 + numero2;
+    break;
+  case 2:
+    resultado = numero1 - numero2;
+    break;
+  case 3:
+    resultado = numero1 * numero2;
+    break;
+  case 4:
+    resultado = numero1 / numero2;
+    break;
+  default:
+    alert("Operação inválida!");
+    break;
+}
 
-    
-    //SAÍDA
+if (resultado !== undefined) {
+  mensagem += "O resultado da operação é: " + resultado + "\n";
+
+  if (resultado % 2 === 0) {
+    mensagem += "O número é par.\n";
+  } else {
+    mensagem += "O número é ímpar.\n";
+  }
+
+  if (resultado >= 0) {
+    mensagem += "O número é positivo.\n";
+  } else {
+    mensagem += "O número é negativo.\n";
+  }
+
+  if (Number.isInteger(resultado)) {
+    mensagem += "O número é inteiro.";
+  } else {
+    mensagem += "O número é decimal.";
+  }
+
+  alert(mensagem);
+}
 
 </script>

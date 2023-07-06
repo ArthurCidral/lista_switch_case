@@ -1,15 +1,24 @@
 <meta charset="UTF-8">
 <script>
-    /*
-    //PROBLEMA: Faça um script que peça um número inteiro e determine se ele é par ou ímpar.
-    */
+    let numero = parseInt(prompt("Digite um número inteiro:"));
 
-    //ENTRADA
+let resultado;
 
-    
-    //PROCESSAMENTO
+switch (numero % 2) {
+  case 0:
+    resultado = "par";
+    break;
+  case 1:
+    resultado = "ímpar";
+    break;
+  default:
+    resultado = "não é um número inteiro";
+}
 
-    
-    //SAÍDA
+if (resultado !== "não é um número inteiro") {
+  alert("O número " + numero + " é " + resultado + ".");
+} else {
+  alert("Você não digitou um número inteiro válido.");
+}
 
 </script>
